@@ -1,0 +1,37 @@
+.task{
+    margin-bottom: 20px;
+    width: 100%;
+    background-color: rgb(88, 99, 136);
+    display: flex;
+    padding-left: 10px;
+}
+.task__input{
+    flex: 8;
+    background-color: rgb(88, 99, 136);
+    border: none;
+    outline: none;
+    color: white;
+    padding-left: 10px;
+}
+.task__button{
+    height: 30px;
+    flex: 1;
+    background-color: rgb(68, 81, 121);
+    border: none;
+    color: white;
+    display: inline-block;
+    transition: font-size 200ms ease;
+    cursor: pointer;
+}
+.task__button:hover{
+    font-size: 17px;
+    background-color: rgba(68, 81, 121, 0.426);
+}
+.delete:hover{
+    font-size: 17px;
+    background-color: rgb(145, 29, 29)
+}
+.edit:hover{
+    font-size: 17px;
+    background-color: rgb(145, 114, 29)
+}

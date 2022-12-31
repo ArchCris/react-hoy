@@ -1,0 +1,28 @@
+.input{
+    margin-bottom: 20px;
+    width: 100%;
+    background-color: rgb(88, 99, 136);
+    display: flex;
+}
+.input__input{
+    flex: 8;
+    background-color: rgb(88, 99, 136);
+    border: none;
+    outline: none;
+    color: white;
+    padding-left: 10px;
+}
+.input__button{
+    height: 30px;
+    flex: 2;
+    background-color: rgb(68, 81, 121);
+    border: none;
+    color: white;
+    display: inline-block;
+    transition: font-size 200ms ease;
+    cursor: pointer;
+}
+.input__button:hover{
+    font-size: 17px;
+    background-color: rgb(29, 145, 29)
+}

@@ -1,0 +1,6 @@
+.output{
+    min-width: 100%;
+    background-color: rgba(240, 248, 255, 0.05);
+    height: 100%;
+    border: dashed 1px rgb(29, 36, 61);
+}

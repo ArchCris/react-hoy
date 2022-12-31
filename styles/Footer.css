@@ -1,0 +1,13 @@
+.footer{
+    height: 7.5vh;
+    width: 100%;
+    background-color: rgba(43, 54, 91);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: solid 2px rgb(149, 166, 200);
+    text-transform: uppercase;
+    font-weight: 600;
+    color: white;
+}
+
