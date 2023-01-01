@@ -1,7 +1,7 @@
 
 import Task from "../components/Task"
 import { useContextData } from "../context/ContextProvider"
-import uuid from 'react-uuid';
+
 
 
 
@@ -12,9 +12,9 @@ const Output = () => {
 
   return (
     <div className='output'>
-      {tasks.map(task=>{
+      {tasks.map(unitask=>{
         return(
-          <Task key={uuid()} id={task.id} task={task.task} state={task.state} deleteTask={deleteTask} editTask={editTask} handleCheck={handleCheck}></Task>
+          <Task key={unitask.task} id={unitask.id} task={unitask.task} state={unitask.state} deleteTask={deleteTask} editTask={editTask} handleCheck={handleCheck}></Task>
         )
       })}
     </div>

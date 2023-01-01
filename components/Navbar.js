@@ -5,13 +5,6 @@ import Link from 'next/link'
 
 const Navbar = () => {
 
-    const date = new Date();
-
-    const day = date.getDate();
-    const month = date.getMonth() + 1;
-    const year = date.getFullYear();
-
-    const str = `${day}/${month}/${year}`;
     
   return (
     <nav className='navbar'>
@@ -29,7 +22,7 @@ const Navbar = () => {
                 <Link className='navbar__a' href="/Contact">Contact</Link>
             </li>
             <li className='navbar__li'>
-                <p className='navbar__date'>{str}</p>
+                <p className='navbar__date'>DATE</p>
             </li>
         </ul>
     </nav>
