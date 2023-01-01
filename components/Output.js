@@ -14,7 +14,7 @@ const Output = () => {
     <div className='output'>
       {tasks.map(unitask=>{
         return(
-          <Task key={unitask.task} id={unitask.id} task={unitask.task} state={unitask.state} deleteTask={deleteTask} editTask={editTask} handleCheck={handleCheck}></Task>
+          <Task key={unitask.id} id={unitask.id} task={unitask.task} state={unitask.state} deleteTask={deleteTask} editTask={editTask} handleCheck={handleCheck}></Task>
         )
       })}
     </div>

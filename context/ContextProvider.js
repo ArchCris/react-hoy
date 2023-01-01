@@ -16,36 +16,35 @@ const addTask = (e) =>{
   if(!inputField){
     console.log("Escribir tarea")
   }else{
-    setTasks([tasks,{task:inputField,id:uuid(),state:false}])
+    setTasks([...tasks,{task:inputField,id:uuid(),state:false}])
     e.target.parentElement.firstChild.value=""
   }
 }
 
 const deleteTask = (e) =>{
   let selectedTaskId = e.target.parentElement.id
-  setTasks([tasks.filter(task=>task.id!==selectedTaskId)])
+  setTasks([...tasks.filter(task=>task.id!==selectedTaskId)])
 }
 
 const editTask = (e) =>{
   let selectedTaskId = e.target.parentElement.id
   let selectedTaskField = e.target.parentElement.firstChild.nextSibling
-  if(selectedTaskField.disabled==true){
-    setTasks([tasks.filter(task=>task.id!==selectedTaskId),{task:selectedTaskField.value,id:selectedTaskId,state:false}])
+  if(selectedTaskField.disabled===true){
+    selectedTaskField.disabled=false
     e.target.style.backgroundColor = "rgb(145, 114, 29)"
   }else{
-    setTasks([tasks.filter(task=>task.id!==selectedTaskId),{task:selectedTaskField.value,id:selectedTaskId,state:true}])
+    setTasks([...tasks.map(task=>{if (task.id===selectedTaskId){task.task=selectedTaskField.value}return task})])
+    selectedTaskField.disabled=true
+    e.target.style.backgroundColor = "rgb(68, 81, 121)"
   }
 }
 
 const handleCheck = (e) =>{
+  let selectedTaskId = e.target.parentElement.id 
   if(e.target.checked){
-    let selectedTaskId = e.target.parentElement.id
-    let selectedTask = tasks.filter(task=>task.id==selectedTaskId)[0]
-    setTasks([tasks.filter(task=>task.id!==selectedTaskId),{task:selectedTask.task,id:selectedTask.id,state:true}])
+    setTasks([...tasks.map(task=>{if (task.id===selectedTaskId){task.state=true}return task})])
   }else{
-    let selectedTaskId = e.target.parentElement.id
-    let selectedTask = tasks.filter(task=>task.id===selectedTaskId)[0]
-    setTasks([tasks.filter(task=>task.id!==selectedTaskId),{task:selectedTask.task,id:selectedTask.id,state:false}])
+    setTasks([...tasks.map(task=>{if (task.id===selectedTaskId){task.state=false}return task})])
   }
 }
 

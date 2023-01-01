@@ -22,7 +22,7 @@ const Navbar = () => {
                 <Link className='navbar__a' href="/Contact">Contact</Link>
             </li>
             <li className='navbar__li'>
-                <p className='navbar__date'>DATE</p>
+                <p className='navbar__date'>dbns</p>
             </li>
         </ul>
     </nav>
