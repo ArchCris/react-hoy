@@ -14,7 +14,7 @@ const ContextProvider = ({children}) => {
   const minutes =objectDate.getMinutes()
   const formatedHour = hour + ":" + minutes
 
-const[tasks,setTasks]=useState([{task:"Ir al supermercado",id:"id1",state:false,hour:12},{task:"Ir al supermercado",id:"id2",state:false,hour:11}])
+const[tasks,setTasks]=useState([{task:"Ir al supermercado",id:"id1",state:false,hour:"12:30"},{task:"Terminar la presentacion",id:"id2",state:false,hour:"16:20"}])
 const[stats,setStats]=useState({addedTasks:2,editedTasks:0,deletedTasks:0})
 
 const addTask = (e) =>{
@@ -37,7 +37,7 @@ const deleteTask = (e) =>{
 
 const editTask = (e) =>{
   let selectedTaskId = e.target.parentElement.id
-  let selectedTaskField = e.target.parentElement.firstChild.nextSibling
+  let selectedTaskField = e.target.parentElement.firstChild.nextSibling.nextSibling
   if(selectedTaskField.disabled===true){
     selectedTaskField.disabled=false
     e.target.style.backgroundColor = "rgb(145, 114, 29)"

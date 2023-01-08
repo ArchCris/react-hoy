@@ -15,7 +15,7 @@
 }
 .input__button{
     height: 30px;
-    flex: 3;
+    width: 200px;
     background-color: rgb(68, 81, 121);
     border: none;
     color: white;
