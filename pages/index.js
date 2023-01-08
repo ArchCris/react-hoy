@@ -1,5 +1,6 @@
 import Input from "../components/Input"
 import Output from "../components/Output"
+import StatusBar from "../components/StatusBar"
 
 
 export default function Home() {
@@ -8,6 +9,7 @@ export default function Home() {
     <div className="body" >
       <Input></Input>
       <Output></Output>
+      <StatusBar></StatusBar>
     </div>
 
   )

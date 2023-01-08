@@ -3,6 +3,7 @@ import React from 'react'
 const Task = (props) => {
   return (
     <div className='task' id={props.id}>
+
         {props.state==false ?
         <input onClick={props.handleCheck} className="task__checkbox" type="checkbox" id="scales" name="scales"></input> :
         <input onClick={props.handleCheck}  type="checkbox" id="scales" name="scales" defaultChecked></input>}

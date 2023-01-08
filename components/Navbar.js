@@ -5,7 +5,10 @@ import Link from 'next/link'
 
 const Navbar = () => {
 
-    
+    const date = new Date()
+    const month = date.toLocaleString("default",{month:"long"})
+    const dayOfMonth = date.getDate()
+
   return (
     <nav className='navbar'>
         <ul className='navbar__ul'>
@@ -22,7 +25,7 @@ const Navbar = () => {
                 <Link className='navbar__a' href="/Contact">Contact</Link>
             </li>
             <li className='navbar__li'>
-                <p className='navbar__date'>dbns</p>
+                <p className='navbar__date'>{dayOfMonth} / {month}</p>
             </li>
         </ul>
     </nav>

@@ -4,6 +4,7 @@ import '../styles/Footer.css'
 import '../styles/input.css'
 import '../styles/output.css'
 import '../styles/task.css'
+import '../styles/statusBar.css'
 import Layout from '../components/Layout'
 import ContextProvider from '../context/ContextProvider'
 
