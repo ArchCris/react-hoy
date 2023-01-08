@@ -1,8 +1,8 @@
 .input{
     height: 30px;
-    margin: 20px 20px;
-    width: calc(100% - 40px);
-    background-color: rgb(88, 99, 136);
+    margin: 20px 40px;
+    width: calc(100% - 80px);
+    background-color: rgba(43, 54, 91, 0.98);
     display: flex;
 }
 .input__input{

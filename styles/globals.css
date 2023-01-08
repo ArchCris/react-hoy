@@ -7,6 +7,7 @@
   font-family: 'Poppins', sans-serif;
 }
 .body{
+  height: 85vh;
   background-color: rgba(43, 54, 91, 0.98);
   display: flex;
   flex-direction: column;

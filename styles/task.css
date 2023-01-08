@@ -3,10 +3,16 @@
     width: 100%;
     background-color: rgb(88, 99, 136);
     display: flex;
+    align-items: center;
     padding-left: 10px;
 }
 .task__checkbox{
     width: 15px;
+    height: 15px;
+}
+.task__hour{
+    margin: 0 20px;
+    color: white;
 }
 .task__input{
     flex: 7;
@@ -14,7 +20,6 @@
     border: none;
     outline: none;
     color: white;
-    padding-left: 10px;
 }
 .task__button{
     flex: 1.5;
