@@ -11,3 +11,34 @@
     background-color: rgba(240, 248, 255, 0.05);
     border: dashed 1px rgb(29, 36, 61);
 }
+.output__waitingTask{
+    margin-bottom: 20px;
+    width: 100%;
+    background-color: rgb(88, 99, 136);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 10px;
+}
+.output__waitingTask-title{
+    color: white;
+}
+.output__waitingTask-pencil{
+    width: 30px;
+    filter:saturate(100%);
+    animation: pencilMove 3s ease-in infinite;
+
+}
+
+@keyframes pencilMove {
+    0%{
+        transform: translateX(0);
+    }
+    50%{
+        transform: translateX(20px);
+    }
+    100%{
+        transform: translateX(0px);
+    }
+    
+}

@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
+import { useContextData } from "../context/ContextProvider"
 
 
 
@@ -8,6 +9,8 @@ const Navbar = () => {
     const date = new Date()
     const month = date.toLocaleString("default",{month:"long"})
     const dayOfMonth = date.getDate()
+
+    const {resetApp} = useContextData()
 
   return (
     <nav className='navbar'>
@@ -23,6 +26,9 @@ const Navbar = () => {
             </li>
             <li className='navbar__li'>
                 <Link className='navbar__a' href="/Contact">Contact</Link>
+            </li>
+            <li className='navbar__li'>
+                <button className='navbar__btn' onClick={resetApp}>Reset</button>
             </li>
             <li className='navbar__li'>
                 <p className='navbar__date'>{dayOfMonth} / {month}</p>

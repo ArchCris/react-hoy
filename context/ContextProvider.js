@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react"
+import { createContext, useContext, useState, useEffect } from "react"
 import uuid from 'react-uuid';
 
 const ContextData = createContext()
@@ -9,13 +9,39 @@ export function useContextData(){
 
 const ContextProvider = ({children}) => {
 
-  const objectDate = new Date()
-  const hour = objectDate.getHours()
-  const minutes =objectDate.getMinutes()
-  const formatedHour = hour + ":" + minutes
+const[tasks,setTasks]=useState([])
+const[stats,setStats]=useState({addedTasks:0,editedTasks:0,deletedTasks:0})
 
-const[tasks,setTasks]=useState([{task:"Ir al supermercado",id:"id1",state:false,hour:"12:30"},{task:"Terminar la presentacion",id:"id2",state:false,hour:"16:20"}])
-const[stats,setStats]=useState({addedTasks:2,editedTasks:0,deletedTasks:0})
+useEffect(()=>{
+  const recoveredData = window.localStorage.getItem("myTasks")
+  const objectData = JSON.parse(recoveredData)
+  if(objectData.length>=1){
+    setTasks(objectData)
+  }
+},[])
+
+useEffect(()=>{
+  if(tasks.length>=0){
+    window.localStorage.setItem("myTasks",JSON.stringify(tasks))
+  }
+},[tasks])
+
+let displayHour = 0
+let displayMinutes = 0
+let objectDate = new Date()
+let hour = objectDate.getHours()
+let minutes = objectDate.getMinutes() 
+if(hour.toString().length==1){
+  displayHour = "0" + hour
+}else{
+  displayHour=hour
+}
+if(minutes.toString().length==1){
+  displayMinutes = "0" + minutes
+}else{
+  displayMinutes=minutes
+}
+let formatedHour = displayHour + ":" + displayMinutes
 
 const addTask = (e) =>{
   let inputField = e.target.parentElement.firstChild.value
@@ -58,8 +84,12 @@ const handleCheck = (e) =>{
   }
 }
 
+const resetApp = () => {
+  setTasks([])
+}
+
   return (
-    <ContextData.Provider value={{stats:stats,tasks:tasks,addTask:addTask,deleteTask:deleteTask,editTask:editTask,handleCheck:handleCheck}}>
+    <ContextData.Provider value={{stats:stats,tasks:tasks,addTask:addTask,deleteTask:deleteTask,editTask:editTask,handleCheck:handleCheck,resetApp:resetApp}}>
     {children}
     </ContextData.Provider>
   )
