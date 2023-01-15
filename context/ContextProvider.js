@@ -14,10 +14,12 @@ const[stats,setStats]=useState({addedTasks:0,editedTasks:0,deletedTasks:0})
 
 useEffect(()=>{
   const recoveredData = window.localStorage.getItem("myTasks")
+  if(recoveredData){
   const objectData = JSON.parse(recoveredData)
   if(objectData.length>=1){
     setTasks(objectData)
   }
+}
 },[])
 
 useEffect(()=>{
